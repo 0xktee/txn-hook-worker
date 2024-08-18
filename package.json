@@ -1,19 +1,18 @@
 {
   "name": "txn-hook-worker",
-  "version": "0.0.0",
-  "private": true,
   "scripts": {
-    "deploy": "wrangler deploy",
-    "dev": "wrangler dev",
-    "start": "wrangler dev",
-    "test": "vitest",
-    "cf-typegen": "wrangler types"
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/web3.js": "^1.95.2",
+    "axios": "^1.7.4",
+    "bs58": "^6.0.0",
+    "hono": "^4.5.5"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.4.5",
-    "@cloudflare/workers-types": "^4.20240815.0",
-    "typescript": "^5.5.2",
-    "vitest": "1.5.0",
-    "wrangler": "^3.60.3"
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "wrangler": "^3.57.2"
   }
 }
